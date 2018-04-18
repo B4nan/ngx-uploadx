@@ -54,8 +54,8 @@ export class Uploader implements UploaderOptions {
       this.headers = (this.options.headers instanceof Function)
         ? this.options.headers(this.file)
         : { ...this.options.headers, ...headers };
-      this.url = this.options.url;
-      this.method = this.options.method;
+      this.url = item.url || this.options.url;
+      this.method = item.method || this.options.method;
     }
     this.status = 'queue';
   }
